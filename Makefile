@@ -2,7 +2,7 @@ override IMAGE_NAME := template
 BUILD_DIR = build
 ISO_DIR = $(BUILD_DIR)/iso_img
 
-CFLAGS = -m64 -O3 -ffunction-sections -fdata-sections
+CFLAGS = -w -m64 -O3 -ffunction-sections -fdata-sections
 CFLAGS += -mno-80387 -mno-mmx -mno-sse -mno-sse2 -mno-red-zone
 LDFLAGS = -nostdlib -static -gc-sections -s -T assets/linker.ld
 VFLAGS = -manualfree -gc none -enable-globals -nofloat -d no_backtrace
