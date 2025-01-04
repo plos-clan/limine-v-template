@@ -15,7 +15,7 @@ v install --git https://github.com/wenxuanjun/v-limine
 **The build system is simplified:**
 
 - Can only build ISO image
-- Not fetch assets (limine and OVMF) from the internet
+- Assets (limine and OVMF) are not fetched from the internet
 
 **Available targets:**
 - `make`: Build the ISO image
