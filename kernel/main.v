@@ -25,10 +25,17 @@ pub fn main() {
 
 	framebuffer := unsafe { framebuffer_request.response.framebuffers[0] }
 
-	for i := u64(0); i < 100; i++ {
-		unsafe {
-			mut slice := &u32(framebuffer.address)
-			slice[i * (framebuffer.pitch / 4) + i] = 0xffffff
+	width := framebuffer.width
+	height := framebuffer.height
+
+	stride := framebuffer.pitch / 4
+	mut slice := &u32(framebuffer.address)
+
+	for i := u64(0); i < width; i++ {
+		for j := u64(0); j < height; j++ {
+			unsafe {
+				slice[j * stride + i] = u32((i * 255 / width) << 16 | (j * 255 / height) << 8)
+			}
 		}
 	}
 

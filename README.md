@@ -7,7 +7,7 @@ This repository will demonstrate how to set up a basic x86-64 kernel in V using 
 **The build system is simplified:**
 
 - Can only build ISO image
-- Do not fetch assets (limine and OVMF) from the internet
+- Not fetch assets (limine and OVMF) from the internet
 
 **Available targets:**
 - `make`: Build the ISO image
