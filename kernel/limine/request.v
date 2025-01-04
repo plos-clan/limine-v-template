@@ -227,7 +227,7 @@ pub:
 	response &DtbResponse
 }
 
-struct RiscvBspHartidRequest {
+pub struct RiscvBspHartidRequest {
 	id [4]u64 = [
 	common_magic_1,
 	common_magic_2,
