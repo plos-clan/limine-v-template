@@ -5,7 +5,7 @@ ISO_DIR = $(BUILD_DIR)/iso_img
 CFLAGS = -w -m64 -O3 -ffunction-sections -fdata-sections
 CFLAGS += -mno-80387 -mno-mmx -mno-sse -mno-sse2 -mno-red-zone
 LDFLAGS = -nostdlib -static -gc-sections -s -T assets/linker.ld
-VFLAGS = -manualfree -gc none -enable-globals -nofloat -d no_backtrace
+VFLAGS = -manualfree -gc none -nofloat -d no_backtrace
 
 XORRISOFLAGS = -as mkisofs --efi-boot limine-uefi-cd.bin
 QEMUFLAGS = -M q35 -cpu qemu64,+x2apic -no-reboot
@@ -24,7 +24,7 @@ setup:
 # Compile V to C and link to kernel
 kernel: setup
 	@v $(VFLAGS) -o $(BUILD_DIR)/blob.c kernel
-	@gcc $(CFLAGS) -c $(BUILD_DIR)/blob.c -o $(BUILD_DIR)/blob.o
+	@clang $(CFLAGS) -c $(BUILD_DIR)/blob.c -o $(BUILD_DIR)/blob.o
 	@ld $(LDFLAGS) $(BUILD_DIR)/blob.o -o $(BUILD_DIR)/kernel
 	@cp $(BUILD_DIR)/kernel $(ISO_DIR)/kernel
 

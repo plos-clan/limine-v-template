@@ -7,7 +7,7 @@ This repository will demonstrate how to set up a basic x86-64 kernel in V using 
 Vpm is broken we cannot submit new packages, so you have to fetch `limine` package manually.
 
 ```bash
-v install --git https://github.com/wenxuanjun/v-limine
+v install https://github.com/wenxuanjun/v-limine
 ```
 
 ## Build
