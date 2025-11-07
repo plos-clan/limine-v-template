@@ -23,3 +23,9 @@ v install https://github.com/wenxuanjun/v-limine
 - `make clean`: Remove the build directory
 
 You need to install `v`, `xorriso`, `make` to build the project, and `qemu` to boot the ISO.
+
+## License
+
+This project is licensed under the [0BSD License](LICENSE).
+
+It includes binary components from the [Limine project](https://github.com/limine-bootloader/limine), which are licensed under the BSD 2-Clause License.
